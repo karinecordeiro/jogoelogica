@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arquivo onze</title>
+</head>
+<body>
+    <!-- ? Utilizando if/else -->
+    <script>
+        function pulaLinha() {
+        document.write("<br>");
+    }
+
+    function mostra(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+    var nomeAluno = prompt("Qual é o nome?")
+    var notaUm = parseInt(prompt('Nota um:'))
+    var notaDois = parseInt(prompt('Nota dois:'))
+    var media = (notaUm + notaDois) / 2
+
+    mostra('Para o aluno ser aprovade sua média precisa ser de 7 acima')
+    if(media >= 7){
+        mostra(nomeAluno + " foi aprovade com média "+ media)
+    } else {
+        mostra(nomeAluno + " não foi aprovade, pois sua média foi " + media)
+    }
+    
+    </script>
+</body>
+</html>

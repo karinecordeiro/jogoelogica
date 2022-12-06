@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arquivo quinze</title>
+</head>
+<body>
+    <h1>Sorteador</h1>
+    <script>
+        function pulaLinha(){
+            document.write("<br>");
+        }
+        function mostra(frase){
+            document.write(frase);
+            pulaLinha();
+        }
+        function sorteia(numero){
+            return Math.round(Math.random()*numero)
+        }
+
+        var numeroSorteio = sorteia(10);
+        var chute = parseInt(prompt("Escolha um número de 0 à 10"));
+
+        if(chute > numeroSorteio){
+            mostra("Número do chute foi: "+ chute + ", e número sorteado: " + numeroSorteio)
+            mostra('O número é maior que o número sorteado')
+        } else if (chute < numeroSorteio){
+            mostra("Número do chute foi "+ chute + ", e número sorteado: " + numeroSorteio)
+            mostra("O número é menor que o número sortado")
+        } else{
+            mostra("Número do chute foi: "+ chute + ", e número sorteado: " + numeroSorteio)
+            mostra("O número é igual ao número sorteado")
+        }
+
+
+    </script>
+</body>
+</html>

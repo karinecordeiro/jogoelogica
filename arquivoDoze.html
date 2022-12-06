@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arquivo doze</title>
+</head>
+<body>
+    <script>
+        var numeroSecreto = Math.round(Math.random()*100)
+        var chute = parseInt(prompt("Digite um número"))
+
+        if(chute === numeroSecreto){
+            document.write("Você acertou!!! Seu número: "+chute+ ". O número secreto: "+numeroSecreto)
+        } else {
+            document.write("Você errou :/ O número correto era " + numeroSecreto)
+        }
+    </script>
+</body>
+</html>

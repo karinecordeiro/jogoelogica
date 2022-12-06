@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arquivo vinte e três</title>
+</head>
+<body>
+    <script>
+        function pulaLinha(){
+            document.write("<br>");
+        }
+        function mostra(frase){
+            document.write(frase);
+            pulaLinha();
+        }
+        mostra("Lista de compras")
+        var itens = parseInt(prompt("Quantos itens você comprou?"))
+        var totalValor = 0
+        var inicio = 1
+
+        while(inicio <= itens){
+            var valorItens = parseInt(prompt("Qual valor do item arredondado?"))
+            totalValor = totalValor + valorItens
+            inicio++
+        }
+        mostra("O valor total da compra foi de: "+ totalValor)
+    
+    </script>
+</body>
+</html>

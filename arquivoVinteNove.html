@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arquivo vinte e nove</title>
+</head>
+<body>
+
+    <input/>
+    <button>Compare com o meu numero da sorte</button>
+    
+    <script>
+        //FUNÇÃO PARA NÚMERO SORTEADO
+        function sorteia() {
+           return Math.round(Math.random() * 10);
+        }
+    
+        //FUNÇÃO PARA SABER QUANTIDADE DE NÚMEROS SORTEADOS
+        function sorteiaNumeros(quantidade) {
+            var numeroSecreto = [];
+            var numero = 1;
+
+            while(numero <= quantidade) {
+                var numeroAleatorio = sorteia();
+                var achou = false;
+    
+                //DECISÃO PARA SABER SE NÚMERO NÃO É ZERO
+                if (numeroAleatorio !== 0) {
+                    //LAÇO PARA SABER SE NÚMERO SE REPETE
+                    for(var posicao = 0; posicao < numeroSecreto.length; posicao++) {
+                        if(numeroSecreto[posicao] == numeroAleatorio){
+                            achou = true;
+                            break;
+                        }
+                    }
+                    //CASO NÚMERO NÃO REPITA ELE VEM PARA ESSA LISTA DE NÚMERO SECRETO E VAI INCREMENTANDO
+                    if (achou == false) {
+                        numeroSecreto.push(numeroAleatorio);
+                        numero++;
+                    }
+                }
+            }
+            return numeroSecreto;
+        }
+        
+        var numeroSecreto = sorteiaNumeros(4);
+        console.log(numeroSecreto);
+    
+        var input = document.querySelector("input");
+        input.focus();
+    
+        function verifica() {
+            var achou = false;
+            
+            for(var posicao = 0; posicao < numeroSecreto.length; posicao++) {
+                if(input.value == numeroSecreto[posicao]) {
+                    alert("Você ACERTOU!");
+                    achou = true;
+                    break;
+                } 
+            }
+            if(achou == false) {
+                alert("Você ERROU!");
+            }
+            input.value = "";
+            input.focus();
+        }
+        var button = document.querySelector("button");
+        button.onclick = verifica;
+    
+    </script>
+</body>
+</html>
